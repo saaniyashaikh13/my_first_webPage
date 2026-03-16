@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahi’s International Fruit Export Services</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Zahi's Logo" class="logo-img">
+    <div class="logo-name">Zahi’s International Services</div>
+  </div>
+  <i class="fas fa-bars menu-btn" id="menu-btn"></i>
+  <nav id="nav">
+    <a href="main.html" class="active">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </nav>
+</header>
+
+
+<!-- whatsApp icon -->
+
+<!-- <a href="https://wa.me/919423347490" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a> -->
+
+<a href="https://wa.me/919172378539?text=Hi%20this%20is%20Zahi's%20International.%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20fruit%20export%20services." 
+class="whatsapp-button" target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+
+</a>
+
+
+<!-- Hero Slider -->
+<section class="hero">
+  <div class="slides">
+    <div class="slide" style="background-image:url('https://www.pixelstalk.net/wp-content/uploads/2016/08/Download-Fruit-Background-Free.jpg');">
+      <div class="overlay">
+        <h1>Zahi’s International Services</h1>
+        <p>Fresh Fruits Delivered Globally</p>
+        <div class="buttons">
+          <button onclick="window.location='product.html'">Explore Products</button>
+          <button onclick="window.location='contactus/contactindex.html
+          '">Contact Us</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image:url('https://wallpaperbat.com/img/977838-optimize-your-shipping-with-smart-loads-geodis-united-states.jpg');">
+      <div class="overlay">
+        <h1>Quality You Can Trust</h1>
+        <p>Exporting Premium Fruits Worldwide</p>
+        <div class="buttons">
+          <button onclick="window.location='product.html'">Explore Products</button>
+          <button onclick="window.location='contactus/contactindex.html'">Contact Us</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image:url('https://img.freepik.com/premium-photo/fresh-fruits-vegetables-are-transported-chilled-export_192345-526.jpg');">
+      <div class="overlay">
+        <h1>Fresh From Farms</h1>
+        <p>Handpicked Fruits for Global Markets</p>
+        <div class="buttons">
+          <button onclick="window.location='product.html'">Explore Products</button>
+          <button onclick="window.location='contactus/contactindex.html'">Contact Us</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Zahi's Logo" class="footer-logo-img">
+    <div class="footer-logo-name">Zahi’s International Services</div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </div>
+
+  <!-- <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div> -->
+
+  <div class="contact-info">
+    Email: info@zahisinternational.com | Phone: +91 40-66777600 |<br> Address: Office No.1 CS No.6095/66/2 Global City,View Siddeshwar Peth, Solapur 413001. Maharashra India.
+  </div>
+
+  <div class="copyright">
+    &copy; 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- Script -->
+<script>
+const slides = document.querySelector('.slides');
+const slideCount = document.querySelectorAll('.slide').length;
+let currentIndex = 0;
+
+function showNextSlide(){
+  currentIndex++;
+  if(currentIndex>=slideCount) currentIndex=0;
+  slides.style.transform=`translateX(-${currentIndex*100}%)`;
+}
+setInterval(showNextSlide,5000);
+
+const menuBtn = document.getElementById('menu-btn');
+const nav = document.getElementById('nav');
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
