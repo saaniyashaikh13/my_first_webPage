@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQs - International Fruit Export</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+margin:0;
+padding:0;
+background:linear-gradient(135deg,#e8f5e8 0%,#c8e6c9 100%);
+color:#333;
+background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzIyOEIyMiIgZmlsbC1vcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMyIvPgo8L2c+CjwvZz4KPC9zdmc+');
+background-size:60px 60px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background-color:#f0fdf4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 15px;
+z-index:1000;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo-name{
+font-weight:bold;
+color:#065f46;
+font-size:1rem;
+}
+
+nav{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+nav a{
+position:relative;
+padding:5px 0;
+color:#065f46;
+font-weight:500;
+text-decoration:none;
+transition:all 0.3s;
+}
+
+nav a:hover,
+nav a.active{
+color:#10b981;
+}
+
+nav a::after{
+content:'';
+display:block;
+height:2px;
+background:#10b981;
+width:0;
+transition:width 0.3s;
+position:absolute;
+bottom:0;
+left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+width:100%;
+}
+
+/* FAQ HEADER */
+
+.page-title{
+background:linear-gradient(135deg,#5dcb61 0%,#388E3C 100%);
+color:white;
+padding:30px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.page-title::before{
+content:"🍎🍌🍊";
+position:absolute;
+top:10px;
+left:10px;
+font-size:2em;
+opacity:0.3;
+}
+
+.page-title::after{
+content:"🥝🍇🍓";
+position:absolute;
+top:10px;
+right:10px;
+font-size:2em;
+opacity:0.3;
+}
+
+.container{
+max-width:800px;
+margin:20px auto;
+padding:20px;
+background-color:rgba(255,255,255,0.9);
+border-radius:12px;
+box-shadow:0 4px 20px rgba(0,0,0,0.1);
+backdrop-filter:blur(10px);
+}
+
+h1{
+margin-bottom:20px;
+font-size:2.5em;
+text-shadow:1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.faq-item{
+border-bottom:2px solid #81C784;
+margin-bottom:15px;
+border-radius:8px;
+overflow:hidden;
+}
+
+.faq-question{
+background:linear-gradient(135deg,#A5D6A7 0%,#81C784 100%);
+padding:15px;
+cursor:pointer;
+font-weight:bold;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#2E7D32;
+transition:all 0.3s ease;
+}
+
+.faq-question:hover{
+background:linear-gradient(135deg,#81C784 0%,#66BB6A 100%);
+transform:translateY(-2px);
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-answer{
+display:none;
+padding:15px;
+background-color:#F1F8E9;
+color:#388E3C;
+animation:fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.icon{
+transition:transform 0.3s;
+color:#2E7D32;
+}
+
+.icon.open{
+transform:rotate(180deg);
+}
+
+/* FOOTER */
+
+footer{
+background:#f0fdf4;
+padding:30px 20px;
+text-align:center;
+border-top:2px solid #d1fae5;
+}
+
+.footer-logo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.footer-logo-img{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+.footer-logo-name{
+font-weight:bold;
+color:#065f46;
+}
+
+.footer-nav{
+margin:15px 0;
+}
+
+.footer-nav a{
+margin:0 10px;
+text-decoration:none;
+color:#065f46;
+font-weight:500;
+}
+
+.footer-nav a:hover{
+color:#10b981;
+}
+
+.contact-info{
+margin-top:10px;
+font-size:14px;
+}
+
+.copyright{
+margin-top:10px;
+font-size:13px;
+color:#444;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<div class="logo-name">Zahi’s International Services</div>
+</div>
+
+<nav>
+<a href="main.html">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html">Products</a>
+<a href="certificate.html">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="faq.html" class="active">FAQ's</a>
+<a href="feedfack.html">Feedback</a>
+</nav>
+
+</header>
+
+<div class="page-title">
+<h1>Frequently Asked Questions (FAQs)</h1>
+<p>Helps buyers quickly find answers to common questions about our international fruit exports.</p>
+</div>
+
+<div class="container">
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">
+Minimum order quantity? 🍏
+<span class="icon">▼</span>
+</div>
+<div class="faq-answer">
+Our minimum order quantity is 1 container as per product. For bulk orders, we offer discounts.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">
+Which countries do you export to? 🌍
+<span class="icon">▼</span>
+</div>
+<div class="faq-answer">
+We export country like Saudi Arabia.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleAnswer(this)">
+Payment methods? 💳
+<span class="icon">▼</span>
+</div>
+<div class="faq-answer">
+We accept credit cards, PayPal, bank transfers and wire transfers securely.
+</div>
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-logo">
+<img src="logo.png" class="footer-logo-img">
+<div class="footer-logo-name">Zahi’s International Services</div>
+</div>
+
+<div class="footer-nav">
+<a href="main.html">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html">Products</a>
+<a href="certificate.html">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="faq.html">FAQ's</a>
+<a href="feedfack.html">Feedback</a>
+</div>
+
+<div class="contact-info">
+Email: info@zahisinternational.com | Phone: +91 40-66777600
+<br>
+Address: Office No.1 CS No.6095/66/2 Global City, View Siddeshwar Peth, Solapur 413001, Maharashtra India.
+</div>
+
+<div class="copyright">
+© 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+function toggleAnswer(element){
+const answer=element.nextElementSibling;
+const icon=element.querySelector('.icon');
+
+if(answer.style.display==='block'){
+answer.style.display='none';
+icon.classList.remove('open');
+}else{
+answer.style.display='block';
+icon.classList.add('open');
+}
+}
+</script>
+
+</body>
+</html>
+```

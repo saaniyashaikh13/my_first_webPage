@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quality and Certificates</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+--primary-green:#2E8B57;
+--light-green:#90EE90;
+--dark-green:#006400;
+--accent-green:#32CD32;
+--text-color:#333;
+--bg-gradient:linear-gradient(135deg,#f0f8f0 0%,#e8f5e8 100%);
+--card-bg:#fff;
+--shadow:0 8px 16px rgba(0,0,0,0.1);
+--border-radius:15px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+background:var(--bg-gradient);
+color:var(--text-color);
+}
+
+/* HEADER */
+
+.main-header{
+position:sticky;
+top:0;
+background:#f0fdf4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 15px;
+z-index:1000;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo-name{
+font-weight:bold;
+color:#065f46;
+font-size:1rem;
+}
+
+nav{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+nav a{
+position:relative;
+padding:5px 0;
+color:#065f46;
+font-weight:500;
+text-decoration:none;
+}
+
+nav a:hover,
+nav a.active{
+color:#10b981;
+}
+
+nav a::after{
+content:'';
+display:block;
+height:2px;
+background:#10b981;
+width:0;
+transition:width .3s;
+position:absolute;
+bottom:0;
+left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+width:100%;
+}
+
+/* MENU */
+
+.menu-btn{
+display:none;
+font-size:1.5rem;
+cursor:pointer;
+color:#065f46;
+}
+
+/* BACKGROUND ANIMATION */
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 25% 25%, rgba(46,139,87,.1) 0%, transparent 50%),
+radial-gradient(circle at 75% 75%, rgba(50,205,50,.1) 0%, transparent 50%);
+animation:drift 25s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes drift{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-30px)}
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1300px;
+margin:50px auto;
+padding:40px;
+background:var(--card-bg);
+border-radius:var(--border-radius);
+box-shadow:var(--shadow);
+}
+
+.section{margin-bottom:70px;}
+
+h2{
+color:var(--primary-green);
+border-bottom:5px solid var(--accent-green);
+padding-bottom:15px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.quality-process{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.process-step{
+background:linear-gradient(135deg,var(--light-green) 0%,#f0f8f0 100%);
+padding:25px;
+border-radius:var(--border-radius);
+width:300px;
+text-align:center;
+transition:.5s;
+}
+
+.process-step:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.certificates-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.certificate{
+text-align:center;
+border:3px solid var(--primary-green);
+padding:30px;
+border-radius:var(--border-radius);
+transition:.5s;
+cursor:pointer;
+}
+
+.certificate:hover{
+transform:scale(1.08);
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+border-color:var(--accent-green);
+}
+
+button{
+cursor:pointer;
+border:none;
+padding:8px 15px;
+background:#10b981;
+color:white;
+border-radius:5px;
+}
+
+/* SAFETY */
+
+.safety-standards{
+background:linear-gradient(135deg,#e8f5e8 0%,var(--light-green) 100%);
+padding:30px;
+border-radius:var(--border-radius);
+}
+
+.safety-standards ul{
+list-style:none;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:0;
+}
+
+.safety-standards li{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:var(--shadow);
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+}
+
+.modal-content{
+background:white;
+margin:8% auto;
+padding:40px;
+width:90%;
+max-width:800px;
+border-radius:var(--border-radius);
+text-align:center;
+}
+
+.close{
+float:right;
+font-size:30px;
+cursor:pointer;
+color:var(--primary-green);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:linear-gradient(135deg,var(--primary-green),var(--accent-green));
+color:white;
+margin-top:60px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+background:#f0fdf4;
+position:absolute;
+top:60px;
+left:0;
+}
+
+nav.show{display:flex;}
+
+nav a{
+padding:10px 15px;
+}
+
+.menu-btn{display:block;}
+
+.container{
+margin:20px;
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="main-header">
+
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<div class="logo-name">Zahi’s International Services</div>
+</div>
+
+<i class="fas fa-bars menu-btn" id="menu-btn"></i>
+
+<nav id="nav">
+<a href="main.html" class="active">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html">Products</a>
+<a href="certificate.html">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="faq.html">FAQ's</a>
+<a href="feedfack.html">Feedback</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<section class="section">
+
+<h2>Quality Control Process</h2>
+
+<div class="quality-process">
+
+<div class="process-step">
+<h3>Harvesting</h3>
+<p>Fruits are hand-picked at optimal ripeness by trained farmers.</p>
+</div>
+
+<div class="process-step">
+<h3>Sorting & Grading</h3>
+<p>Automated and manual sorting to remove defects and grade by size.</p>
+</div>
+
+<div class="process-step">
+<h3>Testing</h3>
+<p>Laboratory tests for pesticides and nutritional value.</p>
+</div>
+
+<div class="process-step">
+<h3>Packaging</h3>
+<p>Hygienic packaging with temperature-controlled storage.</p>
+</div>
+
+<div class="process-step">
+<h3>Export</h3>
+<p>Final inspection before shipment to guarantee standards.</p>
+</div>
+
+</div>
+</section>
+
+
+<section class="section">
+
+<h2>Certifications</h2>
+
+<div class="certificates-grid">
+
+<div class="certificate" data-cert="apeda">
+<a href="pdfs/ZAHIS_APEDA.pdf" target="_blank">
+<button>APEDA Certificate</button>
+</a>
+<h3>APEDA</h3>
+<p>Agricultural Export Development Authority</p>
+</div>
+
+<div class="certificate" data-cert="fssai">
+<a href="pdfs/FSSA_LICENCE.pdf" target="_blank">
+<button>FSSAI Certificate</button>
+</a>
+<h3>FSSAI</h3>
+<p>Food Safety Authority of India</p>
+</div>
+
+<div class="certificate" data-cert="iec">
+<a href="pdfs/certificate_Of_IEC.pdf" target="_blank">
+<button>IEC Certificate</button>
+</a>
+<h3>IEC</h3>
+<p>Importer Exporter Code</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Hygiene and Safety Standards</h2>
+
+<div class="safety-standards">
+
+<ul>
+
+<li><b>Clean Facilities:</b> Regular sanitization.</li>
+
+<li><b>Employee Training:</b> Hygiene protocols.</li>
+
+<li><b>Traceability:</b> Full tracking.</li>
+
+<li><b>Compliance:</b> International food safety standards.</li>
+
+<li><b>Sustainable Practices:</b> Eco-friendly methods.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 International Fruit Export. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn=document.getElementById("menu-btn");
+const nav=document.getElementById("nav");
+
+menuBtn.onclick=()=>{
+nav.classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>

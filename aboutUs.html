@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Zahi’s International Fruit Export Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- GLOBAL STYLES ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f6fff6;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+    padding: 80px 10%;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2 {
+    color: #1f7a3f;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 900px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(135deg, #e8f8ee, #d1f1dc);
+    text-align: center;
+    padding: 100px 10%;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.hero p {
+    margin: 20px auto;
+    font-size: 1.05rem;
+}
+
+/* ---------- CARD GRID ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ---------- LIST ---------- */
+ul {
+    margin-top: 15px;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    background: linear-gradient(135deg, #2fa66c, #1f7a3f);
+    color: #fff;
+    text-align: center;
+}
+
+.cta p {
+    margin: 15px auto 30px;
+}
+
+button {
+    background: #ffffff;
+    color: #1f7a3f;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #e8f8ee;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer{
+  background:#f0fdf4;
+  padding:20px;
+  text-align:center;
+}
+
+.footer-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-logo-img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-logo-name{
+  font-weight:bold;
+  color:#065f46;
+}
+
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-nav a{
+  color:#065f46;
+  transition:0.3s;
+}
+
+.footer-nav a:hover{
+  color:#10b981;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.social-icons a{
+  font-size:1.2rem;
+  color:#065f46;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#10b981;
+}
+
+.contact-info{
+  font-size:0.85rem;
+  color:#065f46;
+  margin-bottom:5px;
+}
+
+.copyright{
+  font-size:0.75rem;
+  color:#065f46;
+}
+
+/* Global */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto',sans-serif;
+}
+
+body{
+  color:#333;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  cursor:pointer;
+  border:none;
+  outline:none;
+}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  background-color:#f0fdf4;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+  z-index:1000;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.logo-name{
+  font-weight:bold;
+  color:#065f46;
+  font-size:1rem;
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  position:relative;
+  padding:5px 0;
+  color:#065f46;
+  font-weight:500;
+  transition:all 0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#10b981;
+}
+
+nav a::after{
+  content:'';
+  display:block;
+  height:2px;
+  background:#10b981;
+  width:0;
+  transition:width 0.3s;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+  width:100%;
+}
+
+/* Hamburger */
+.menu-btn{
+  display:none;
+  font-size:1.5rem;
+  cursor:pointer;
+  color:#065f46;
+}
+
+/* Hero Slider */
+.hero{
+  position:relative;
+  width:100%;
+  height:70vh;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  transition:transform 1s ease-in-out;
+  height:100%;
+}
+
+.slide{
+  min-width:100%;
+  height:100%;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+}
+
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  padding:0 15px;
+}
+
+.overlay h1{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.overlay p{
+  font-size:1rem;
+  margin-bottom:15px;
+}
+
+.overlay .buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.overlay button{
+  padding:8px 20px;
+  border-radius:25px;
+  background:#10b981;
+  color:#fff;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.overlay button:hover{
+  background:#34d399;
+}
+
+/* Footer */
+footer{
+  background:#f0fdf4;
+  padding:20px;
+  text-align:center;
+}
+
+.footer-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-logo-img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-logo-name{
+  font-weight:bold;
+  color:#065f46;
+}
+
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-nav a{
+  color:#065f46;
+  transition:0.3s;
+}
+
+.footer-nav a:hover{
+  color:#10b981;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.social-icons a{
+  font-size:1.2rem;
+  color:#065f46;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#10b981;
+}
+
+.contact-info{
+  font-size:0.85rem;
+  color:#065f46;
+  margin-bottom:5px;
+}
+
+.copyright{
+  font-size:0.75rem;
+  color:#065f46;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#f0fdf4;
+    padding:10px 0;
+    position:absolute;
+    top:60px;
+    left:0;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    padding:10px 15px;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .overlay h1{
+    font-size:1.5rem;
+  }
+
+  .overlay p{
+    font-size:0.9rem;
+  }
+
+  .overlay button{
+    padding:7px 15px;
+    font-size:0.9rem;
+  }
+}
+
+@media (max-width:480px){
+  .logo-name{
+    font-size:0.9rem;
+  }
+
+  .overlay h1{
+    font-size:1.2rem;
+  }
+
+  .overlay p{
+    font-size:0.8rem;
+  }
+
+  .overlay button{
+    padding:6px 12px;
+    font-size:0.8rem;
+  }
+
+  .hero{
+    height:60vh;
+  }
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* idk header spacing */
+.hero h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+font-size:18px;
+color:#555;
+}
+
+.hero{
+height:40vh;   /* screen ka 60% height */
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:#e8f3f3;   /* same light color */
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+
+    <!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Zahi's Logo" class="logo-img">
+    <div class="logo-name">Zahi’s International Services</div>
+  </div>
+  <i class="fas fa-bars menu-btn" id="menu-btn"></i>
+  <nav id="nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </nav>
+</header>
+
+
+<!-- Company Introduction -->
+<section class="hero show">
+    <h1>Zahi’s International Fruit Export Services</h1>
+    <p>
+        A trusted name in the international fruit export industry, delivering farm-fresh,
+        premium-quality fruits to global markets with reliability, transparency, and excellence.
+    </p>
+</section>
+
+<!-- Who We Are -->
+<section>
+    <h2>Who We Are</h2>
+    <justify>
+        Zahis International is a globally trusted name in the import and export of premium fruits and vegetables, with over two decades of experience in delivering freshness across borders. Built on a foundation of quality, integrity, and long-term relationships, we serve as a reliable link between farmers, suppliers, distributors, and customers worldwide.
+        <br><br>
+Our strength lies in our farm-to-customer model, designed to preserve the true essence of nature. Every product we handle is carefully sourced from fertile orchards and trusted farms, handpicked at peak ripeness, and managed with strict quality control—without the use of artificial preservatives. This ensures that the fruits and vegetables we deliver retain their natural flavor, texture, and nutritional value from the farm all the way to your market.
+
+<br><br>
+At Zahis International, we go beyond trading produce—we build partnerships. We collaborate closely with growers, exporters, logistics partners, and global buyers to create a transparent, efficient, and dependable supply chain. By importing high-quality produce from trusted international sources and re-exporting select items to meet global demand, we help businesses access fresh, safe, and premium agricultural products across markets.
+Our operations are fully aligned with major international certifications and global food safety standards, reflecting our commitment to quality assurance, sustainability, ethical sourcing, and environmental responsibility. Every shipment is handled with care, traceability, and compliance—so our partners can rely on consistency and confidence.
+<br><br>
+Whether sourcing from India’s fertile lands or delivering global specialties to international markets, Zahis International stands for purity, freshness, and trust—one shipment at a time.
+
+
+
+    </justify>
+    <justify>
+        Our vision is to become a globally recognized fruit export brand known for trust,
+        consistency, and long-term trade partnerships.
+    </justify>
+</section>
+
+<!-- Our Services -->
+<section>
+    <h2>Our Services Overview</h2>
+    <div class="grid">
+        <div class="card">Fruit sourcing from certified farms</div>
+        <div class="card">Quality control & export-grade inspection</div>
+        <div class="card">Hygienic packaging & labeling</div>
+        <div class="card">Cold storage & freshness preservation</div>
+        <div class="card">Global logistics & shipping solutions</div>
+        <div class="card">Export documentation & certifications</div>
+    </div>
+</section>
+
+<!-- Products -->
+<section>
+    <h2>Our Product Range</h2>
+    <p>
+        We export a wide selection of premium fruits including apples, mangoes, bananas,
+        grapes, oranges, and seasonal fruits. Every product is carefully selected,
+        hygienically packed, and shipped with freshness guaranteed.
+    </p>
+</section>
+
+<!-- Certifications -->
+<section>
+    <h2>Certifications & Quality Standards</h2>
+    <ul>
+        <li>International food safety compliance</li>
+        <li>Export-grade quality inspection procedures</li>
+        <li>Hygienic handling and packaging standards</li>
+        <li>Cold chain management systems</li>
+        <li>Certified export documentation</li>
+    </ul>
+</section>
+
+<!-- Export Markets -->
+<section>
+    <h2>Export Markets</h2>
+    <justify>
+        We proudly serve global markets across Asia, the Middle East, Europe,
+        and other international regions. Our reliable logistics network and
+        trusted partners ensure timely and safe deliveries worldwide.
+    </justify>
+</section>
+
+<!-- Contact CTA -->
+<!-- <section class="cta">
+    <h2>Get in Touch</h2>
+    <p>
+        Looking for a reliable fruit export partner?
+        Contact us today for inquiries, bulk orders, or export quotations.
+    </p>
+    <!<a href="contactus/contactindex.html" class="btn">Contact To Us</a> -->
+    <!-- <button onclick="contactus/contactindex.html" >Contact To Us</button>
+</section> --> 
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Get in Touch </h2>
+        <p class="mt-3">
+            Looking for a reliable fruit export partner?
+        Contact us today for inquiries, bulk orders, or export quotations.
+        </p>
+        
+        <a href="contactus/contactindex.html">
+            <button class="cta-btn" >Contact To Us</button></a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Zahi's Logo" class="footer-logo-img">
+    <div class="footer-logo-name">Zahi’s International Services</div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </div>
+
+  <!-- <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div> -->
+
+  <div class="contact-info">
+    Email: info@zahisinternational.com | Phone: +91 40-66777600 |<br> Address: Office No.1 CS No.6095/66/2 Global City,View Siddeshwar Peth, Solapur 413001. Maharashra India.
+  </div>
+
+  <div class="copyright">
+    &copy; 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+  </div>
+</footer>
+
+
+<!-- ---------- JAVASCRIPT ---------- -->
+<script>
+/* Scroll Animation */
+const sections = document.querySelectorAll("section");
+
+const revealOnScroll = () => {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+            section.classList.add("show");
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+/* CTA Button */
+// function contactAlert() {
+//     alert("Thank you for your interest! Our team will contact you shortly.");
+// }
+</script>
+
+</body>
+</html>

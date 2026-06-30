@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Testimonials & Clients - ZAHI'S INTERNATIONAL SERVICES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Roboto',Arial,sans-serif;
+margin:0;
+padding:0;
+background:linear-gradient(135deg,#e8f5e8 0%,#c8e6c9 100%);
+color:#333;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background-color:#f0fdf4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 15px;
+z-index:1000;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo-name{
+font-weight:bold;
+color:#065f46;
+font-size:1rem;
+}
+
+nav{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+nav a{
+position:relative;
+padding:5px 0;
+color:#065f46;
+font-weight:500;
+transition:all 0.3s;
+text-decoration:none;
+}
+
+nav a:hover,
+nav a.active{
+color:#10b981;
+}
+
+nav a::after{
+content:'';
+display:block;
+height:2px;
+background:#10b981;
+width:0;
+transition:width 0.3s;
+position:absolute;
+bottom:0;
+left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+width:100%;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:20px auto;
+padding:20px;
+background-color:white;
+border-radius:12px;
+box-shadow:0 8px 32px rgba(0,0,0,0.1);
+backdrop-filter:blur(10px);
+animation:slideIn 1s ease-out;
+}
+
+h2{
+color:#4CAF50;
+border-bottom:3px solid #4CAF50;
+padding-bottom:10px;
+font-size:1.8em;
+margin-bottom:20px;
+position:relative;
+}
+
+h2::after{
+content:'';
+position:absolute;
+bottom:-3px;
+left:0;
+width:50px;
+height:3px;
+background:#66BB6A;
+animation:growWidth 1s ease-out;
+}
+
+.section{
+margin-bottom:40px;
+padding:20px;
+border-radius:8px;
+background:#f9f9f9;
+transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+
+.section:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.testimonial{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+border-left:5px solid #4CAF50;
+transition:transform 0.3s ease;
+}
+
+.testimonial:hover{
+transform:scale(1.05);
+}
+
+.testimonial .quote{
+font-style:italic;
+margin-bottom:15px;
+font-size:1.1em;
+}
+
+.testimonial .stars{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.testimonial cite{
+font-weight:bold;
+color:#4CAF50;
+display:block;
+}
+
+.testimonial .role{
+font-size:0.9em;
+color:#666;
+}
+
+/* CLIENT LOGOS */
+
+.clients{
+text-align:center;
+}
+
+.clients h3{
+color:#4CAF50;
+margin-bottom:20px;
+}
+
+.client-logos{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.client-logo{
+background:white;
+border-radius:10px;
+padding:15px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+transition:transform 0.3s ease,opacity 0.3s ease;
+width:150px;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.client-logo:hover{
+transform:translateY(-5px);
+opacity:0.8;
+}
+
+.client-logo img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+}
+
+/* CAROUSEL */
+
+.carousel{
+overflow:hidden;
+position:relative;
+}
+
+.carousel-inner{
+display:flex;
+transition:transform 0.5s ease;
+}
+
+.carousel-item{
+min-width:100%;
+box-sizing:border-box;
+}
+
+.carousel-controls{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:100%;
+display:flex;
+justify-content:space-between;
+pointer-events:none;
+}
+
+.carousel-controls button{
+background:#4CAF50;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+border-radius:50%;
+pointer-events:all;
+}
+
+/* FOOTER */
+
+footer{
+background:#f0fdf4;
+padding:30px 20px;
+text-align:center;
+border-top:2px solid #d1fae5;
+}
+
+.footer-logo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.footer-logo-img{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+.footer-logo-name{
+font-weight:bold;
+color:#065f46;
+}
+
+.footer-nav{
+margin:15px 0;
+}
+
+.footer-nav a{
+margin:0 10px;
+text-decoration:none;
+color:#065f46;
+font-weight:500;
+}
+
+.footer-nav a:hover{
+color:#10b981;
+}
+
+.contact-info{
+margin-top:10px;
+font-size:14px;
+}
+
+.copyright{
+margin-top:10px;
+font-size:13px;
+color:#444;
+}
+
+/* Animations */
+
+@keyframes slideIn{
+from{opacity:0;transform:translateX(-50px);}
+to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes growWidth{
+from{width:0;}
+to{width:50px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" alt="Zahi's Logo" class="logo-img">
+<div class="logo-name">Zahi’s International Services</div>
+</div>
+
+<nav>
+<a href="main.html">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html">Products</a>
+<a href="certificate.html">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="faq.html">FAQ's</a>
+<a href="feedfack.html" class="active">Feedback</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<section class="section">
+
+<h2><i class="fas fa-quote-left"></i> What Our Buyers Say</h2>
+
+<p>Real reviews from importers and distributors worldwide who trust ZAHI'S INTERNATIONAL SERVICES for quality and reliability.</p>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<div class="quote">"ZAHI'S delivered the freshest mangoes we've ever imported."</div>
+<div class="stars">★★★★★</div>
+<cite>Tariq Nadaf</cite>
+<span class="role">Dhammam</span>
+</div>
+
+<div class="testimonial">
+<div class="quote">"Exceptional service and top-notch quality."</div>
+<div class="stars">★★★★★</div>
+<cite>Faisal Khan</cite>
+<span class="role">Saudi Arabia</span>
+</div>
+
+<div class="testimonial">
+<div class="quote">"Reliable partners with a global reach."</div>
+<div class="stars">★★★★★</div>
+<cite>Saleh Khan</cite>
+<span class="role">Jeddah</span>
+</div>
+
+<div class="testimonial">
+<div class="quote">"Their citrus exports are a game-changer."</div>
+<div class="stars">★★★★★</div>
+<cite>Ahmed Pathan</cite>
+<span class="role">Oman</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2><i class="fas fa-handshake"></i> Our Trusted Clients</h2>
+
+<div class="carousel">
+
+<div class="carousel-inner">
+
+<div class="carousel-item">
+<div class="client-logos">
+
+<div class="client-logo"><img src="logoImages.jpg\1.jpg"></div>
+<div class="client-logo"><img src="logoImages.jpg\3.avif"></div>
+<div class="client-logo"><img src="logoImages.jpg\4.jpg"></div>
+<div class="client-logo"><img src="logoImages.jpg\5.jpg"></div>
+
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="client-logos">
+
+<div class="client-logo"><img src="logoImages.jpg\6.jpeg"></div>
+<div class="client-logo"><img src="logoImages.jpg\7.jpeg"></div>
+<div class="client-logo"><img src="logoImages.jpg\8.jpeg"></div>
+<div class="client-logo"><img src="logoImages.jpg\10.jpeg"></div>
+
+</div>
+</div>
+
+</div>
+
+<div class="carousel-controls">
+<button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+<button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+
+<div class="footer-logo">
+<img src="logo.png" class="footer-logo-img">
+<div class="footer-logo-name">Zahi’s International Services</div>
+</div>
+
+<div class="footer-nav">
+<a href="main.html">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html">Products</a>
+<a href="certificate.html">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="faq.html">FAQ's</a>
+<a href="feedfack.html">Feedback</a>
+</div>
+
+<div class="contact-info">
+Email: info@zahisinternational.com | Phone: +91 40-66777600
+<br>
+Address: Office No.1 CS No.6095/66/2 Global City, View Siddeshwar Peth, Solapur 413001, Maharashtra India.
+</div>
+
+<div class="copyright">
+© 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+
+const carouselInner=document.querySelector('.carousel-inner');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+
+let currentIndex=0;
+const totalItems=document.querySelectorAll('.carousel-item').length;
+
+function updateCarousel(){
+carouselInner.style.transform=`translateX(-${currentIndex*100}%)`;
+}
+
+prevBtn.addEventListener('click',()=>{
+currentIndex=(currentIndex>0)?currentIndex-1:totalItems-1;
+updateCarousel();
+});
+
+nextBtn.addEventListener('click',()=>{
+currentIndex=(currentIndex<totalItems-1)?currentIndex+1:0;
+updateCarousel();
+});
+
+setInterval(()=>{
+currentIndex=(currentIndex<totalItems-1)?currentIndex+1:0;
+updateCarousel();
+},5000);
+
+</script>
+
+</body>
+</html>
+```

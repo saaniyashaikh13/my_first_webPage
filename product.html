@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Zahi’s International Fruit Export Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6fff6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #e7f8ee, #d1f1dc);
+            padding: 70px 15px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #1f7a3f;
+            font-weight: 600;
+        }
+
+        .header p {
+            max-width: 800px;
+            margin: auto;
+            color: #444;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.35s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-img {
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h5 {
+            color: #1f7a3f;
+            font-weight: 600;
+        }
+
+        .product-content ul {
+            padding-left: 18px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #2fa66c, #1f7a3f);
+            color: #fff;
+            padding: 60px 15px;
+            text-align: center;
+        }
+
+        .cta .btn {
+            background: #ffffff;
+            color: #1f7a3f;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .cta .btn:hover {
+            background: #e8f8ee;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Header */
+header{
+  position:sticky;
+  top:0;
+  background-color:#f0fdf4;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+  z-index:1000;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* .logo-name{
+  font-weight:bold;
+  color:#065f46;
+  font-size:1rem;
+} */
+
+.logo-name{
+  font-weight:600;
+  color:#065f46;
+  font-size:1.1rem;
+  font-family:'Poppins', sans-serif;
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  position:relative;
+  padding:5px 0;
+  color:#065f46;
+  font-weight:500;
+  transition:all 0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#10b981;
+}
+
+nav a::after{
+  content:'';
+  display:block;
+  height:2px;
+  background:#10b981;
+  width:0;
+  transition:width 0.3s;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+  width:100%;
+}
+
+/* Hamburger */
+.menu-btn{
+  display:none;
+  font-size:1.5rem;
+  cursor:pointer;
+  color:#065f46;
+}
+
+nav a{
+    text-decoration: none;
+}
+nav a{
+  position:relative;
+  font-family:'Poppins', sans-serif;
+  font-size:0.95rem;
+  }
+
+  /* Footer */
+footer{
+  background:#f0fdf4;
+  padding:20px;
+  text-align:center;
+}
+
+.footer-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-logo-img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-logo-name{
+  font-weight:bold;
+  color:#065f46;
+}
+
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-nav a{
+  color:#065f46;
+  transition:0.3s;
+}
+
+.footer-nav a:hover{
+  color:#10b981;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.social-icons a{
+  font-size:1.2rem;
+  color:#065f46;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#10b981;
+}
+
+.contact-info{
+  font-size:0.85rem;
+  color:#065f46;
+  margin-bottom:5px;
+}
+
+.copyright{
+  font-size:0.75rem;
+  color:#065f46;
+}
+  
+
+/* Responsive */
+@media (max-width:768px){
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#f0fdf4;
+    padding:10px 0;
+    position:absolute;
+    top:60px;
+    left:0;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    padding:10px 15px;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .overlay h1{
+    font-size:1.5rem;
+  }
+
+  .overlay p{
+    font-size:0.9rem;
+  }
+
+  .overlay button{
+    padding:7px 15px;
+    font-size:0.9rem;
+  }
+}
+
+@media (max-width:480px){
+  .logo-name{
+    font-size:0.9rem;
+  }
+
+  .overlay h1{
+    font-size:1.2rem;
+  }
+
+  .overlay p{
+    font-size:0.8rem;
+  }
+
+  .overlay button{
+    padding:6px 12px;
+    font-size:0.8rem;
+  }
+
+  .hero{
+    height:60vh;
+  }
+}
+
+  
+  </style>
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Zahi's Logo" class="logo-img">
+    <div class="logo-name">Zahi’s International Services</div>
+  </div>
+  <i class="fas fa-bars menu-btn" id="menu-btn"></i>
+  <nav id="nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html" class="active">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </nav>
+</header>
+
+<!-- Header -->
+<section class="header">
+    <div class="container">
+        <h1>Our Premium Export Fruit Range</h1>
+        <p class="mt-3">
+            Zahi’s International Fruit Export Services supplies premium, export-quality fruits
+            sourced from trusted farms and delivered globally with strict quality control,
+            freshness assurance, and international compliance.
+        </p>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Apples -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\apple.png" alt="Fresh Apples">
+                        </div>
+                    <div class="product-content">
+                        <h5>Fresh Apples</h5>
+                        <ul>
+                            <li>Origin: Selected orchards ensuring natural freshness</li>
+                            <li>Quality Grade: Premium / A-Grade export quality</li>
+                            <li>Varieties & Sizes: Available in multiple sizes and types</li>
+                            <li>Packaging: Cartons, ventilated boxes, cold packaging</li>
+                            <li>Season: Year-round availability</li>
+                            <li>Shelf Life: 30–60 days under cold storage</li>
+                            <li>Standards: Compliant with international food safety norms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mangoes -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\mango.png" alt="Premium Mangoes">
+                    </div>
+                    <div class="product-content">
+                        <h5>Premium Mangoes</h5>
+                        <ul>
+                            <li>Origin: Farm-fresh mangoes from certified growers</li>
+                            <li>Quality Grade: Premium export selection</li>
+                            <li>Varieties: Alphonso, Kesar, and export varieties</li>
+                            <li>Packaging: Hygienic cartons with cushioning</li>
+                            <li>Season: Seasonal availability</li>
+                            <li>Shelf Life: 14–21 days with controlled storage</li>
+                            <li>Standards: Global GAP & export certifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bananas -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\bananas.png" alt="Bananas">
+                    </div>
+                    <div class="product-content">
+                        <h5>Bananas</h5>
+                        <ul>
+                            <li>Origin: Fresh harvest from export-approved farms</li>
+                            <li>Quality Grade: A-Grade export bananas</li>
+                            <li>Sizes: Uniform size and ripeness control</li>
+                            <li>Packaging: Export cartons & temperature-controlled boxes</li>
+                            <li>Season: Year-round supply</li>
+                            <li>Shelf Life: 20–30 days under cold chain</li>
+                            <li>Standards: International export compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grapes -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src= "img\grapes.png" alt="Seedless Grapes">
+                    </div>
+                    <div class="product-content">
+                        <h5>Seedless Grapes</h5>
+                        <ul>
+                            <li>Origin: Carefully selected vineyards</li>
+                            <li>Quality Grade: Premium export grade</li>
+                            <li>Varieties: Green & black seedless grapes</li>
+                            <li>Packaging: Ventilated clamshells & cartons</li>
+                            <li>Season: Seasonal exports</li>
+                            <li>Shelf Life: 25–40 days in cold storage</li>
+                            <li>Standards: International residue-free standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oranges -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\orange.png" alt="Juicy Oranges">
+                    </div>
+                    <div class="product-content">
+                        <h5>Juicy Oranges</h5>
+                        <ul>
+                            <li>Origin: Premium citrus-growing regions</li>
+                            <li>Quality Grade: Export-quality A-Grade</li>
+                            <li>Sizes: Multiple export-ready sizes</li>
+                            <li>Packaging: Cartons & moisture-controlled boxes</li>
+                            <li>Season: Seasonal availability</li>
+                            <li>Shelf Life: Up to 45 days with cold storage</li>
+                            <li>Standards: International citrus export norms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Watermelon -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\waterm.png" alt="Sweet Watermelon">
+                    </div>
+                    <div class="product-content">
+                        <h5>Sweet Watermelon</h5>
+                        <ul>
+                            <li>Origin: Selected fromm tropical farms</li>
+                            <li>Quality Grade: Premium A-Grade export bananas</li>
+                            <li>Sizes: Uniform size and export ready size</li>
+                            <li>Packaging: Export cartons with protective cushioning</li>
+                            <li>Season: Summer availability</li>
+                            <li>Shelf Life: Upto 25 days with cold chain</li>
+                            <li>Standards: International export quality standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Pineapple -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\pineapple.png" alt="Gold Crown Pineapple">
+                    </div>
+                    <div class="product-content">
+                        <h5>Gold Crown Pineapple</h5>
+                        <ul>
+                            <li>Origin: Tropical fruit-growing region</li>
+                            <li>Quality Grade: Premium export-quality A-Grade</li>
+                            <li>Sizes: Multiple export-ready sizes</li>
+                            <li>Packaging: Cartons & ventilated boxes</li>
+                            <li>Season: Available all year (peak in summer)</li>
+                            <li>Shelf Life: Up to 20 days with cold storage</li>
+                            <li>Standards: International citrus export norms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pineapple -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\pomogramate.png" alt="Royal Pomogranate">
+                    </div>
+                    <div class="product-content">
+                        <h5>Royal Pomogranate</h5>
+                        <ul>
+                            <li>Origin: Premium orchards from India</li>
+                            <li>Quality Grade: Export-quality A-Grade</li>
+                            <li>Sizes: Multiple export-ready sizes</li>
+                            <li>Packaging: Cartons & moisture-controlled boxes</li>
+                            <li>Season: Seasonal availability</li>
+                            <li>Shelf Life: Up to 30 days with cold storage</li>
+                            <li>Standards: International citrus export quality standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Seasonal Fruits -->
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="img\seasonal-fruits.png" alt="Seasonal Fruits">
+                    </div>
+                    <div class="product-content">
+                        <h5>Seasonal Export Fruits</h5>
+                        <ul>
+                            <li>Includes: Custard Apple, Strawberry, Muskmelon, Kiwi , Papaya, Guava & more..</li>
+                            
+                            <li>Quality Grade: Premium export selection</li>
+                            <li>Packaging: Customized as per fruit type</li>
+                            <li>Season: Availability based on harvest cycle</li>
+                            <li>Storage: Cold chain & preservation support</li>
+                            <li>Freshness: Direct farm-to-export sourcing</li>
+                            <li>Compliance: International export certifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Interested in Bulk Orders or Product Details?</h2>
+        <p class="mt-3">
+            Contact Zahi’s International Fruit Export Services for export pricing,
+            product catalogs, and global supply partnerships.
+        </p>
+        
+        <a href="contactus/contactindex.html" class="btn">Contact Us for Bulk Orders</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Zahi's Logo" class="footer-logo-img">
+    <div class="footer-logo-name">Zahi’s International Services</div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </div>
+
+  <div class="contact-info">
+    Email: info@zahisinternational.com | Phone: +91 40-66777600 |<br> Address: Office No.1 CS No.6095/66/2 Global City,View Siddeshwar Peth, Solapur 413001. Maharashra India.
+  </div>
+
+  <div class="copyright">
+    &copy; 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+  </div>
+</footer>
+
+
+<footer>
+    © 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+</footer>
+
+</body>
+</html>

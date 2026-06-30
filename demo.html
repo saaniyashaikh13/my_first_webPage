@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Products | Zahi’s International Fruit Export Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f6fff6;
+animation:fadePage 1s ease;
+}
+
+@keyframes fadePage{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background:#f0fdf4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 30px;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+transition:0.4s;
+}
+
+.logo-img:hover{
+transform:scale(1.1) rotate(8deg);
+}
+
+.logo-name{
+font-weight:600;
+color:#065f46;
+font-size:17px;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:#065f46;
+font-weight:500;
+position:relative;
+padding-bottom:5px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#10b981;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:0%;
+height:2px;
+background:#10b981;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a.active{
+color:#10b981;
+}
+
+nav a.active::after{
+width:100%;
+}
+
+/* MOBILE MENU */
+
+.menu-btn{
+display:none;
+font-size:1.6rem;
+cursor:pointer;
+color:#065f46;
+}
+
+@media(max-width:900px){
+
+nav{
+position:absolute;
+top:70px;
+right:0;
+background:#fff;
+flex-direction:column;
+width:220px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+display:none;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+/* PAGE HEADER */
+
+.header{
+background:linear-gradient(135deg,#e7f8ee,#d1f1dc);
+padding:80px 20px;
+text-align:center;
+animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+from{opacity:0; transform:translateY(-40px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+.header h1{
+color:#1f7a3f;
+font-weight:600;
+}
+
+.header p{
+max-width:800px;
+margin:auto;
+color:#444;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+background:#fff;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+overflow:hidden;
+transition:0.4s;
+height:100%;
+}
+
+.product-card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.product-img{
+overflow:hidden;
+}
+
+.product-img img{
+width:100%;
+height:230px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.product-card:hover img{
+transform:scale(1.1);
+}
+
+.product-content{
+padding:25px;
+}
+
+.product-content h5{
+color:#1f7a3f;
+font-weight:600;
+}
+
+.product-content ul{
+padding-left:18px;
+font-size:14px;
+color:#555;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#2fa66c,#1f7a3f);
+color:#fff;
+padding:60px 15px;
+text-align:center;
+}
+
+.cta .btn{
+background:#fff;
+color:#1f7a3f;
+border-radius:30px;
+padding:12px 28px;
+font-weight:500;
+transition:0.3s;
+margin:5px;
+}
+
+.cta .btn:hover{
+background:#e8f8ee;
+transform:scale(1.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#fff;
+text-align:center;
+padding:15px;
+color:#666;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" alt="Zahi Logo" class="logo-img">
+<div class="logo-name">Zahi’s International Services</div>
+</div>
+
+<i class="fas fa-bars menu-btn" id="menu-btn"></i>
+
+<nav id="nav">
+<a href="main.html">Home</a>
+<a href="aboutUs.html">About</a>
+<a href="services.html">Services</a>
+<a href="product.html" class="active">Products</a>
+<a href="#">Certifications</a>
+<a href="contactus/contactindex.html">Contact Us</a>
+<a href="login2.html">Login</a>
+</nav>
+
+</header>
+
+
+<section class="header">
+<div class="container">
+<h1>Our Premium Export Fruit Range</h1>
+<p class="mt-3">
+Zahi’s International Fruit Export Services supplies premium, export-quality fruits
+sourced from trusted farms and delivered globally with strict quality control,
+freshness assurance, and international compliance.
+</p>
+</div>
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="py-5">
+<div class="container">
+<div class="row g-4">
+
+<!-- APPLES -->
+
+<div class="col-md-6 col-lg-4">
+<div class="product-card">
+<div class="product-img">
+<img src="img/apple.png">
+</div>
+<div class="product-content">
+<h5>Fresh Apples</h5>
+<ul>
+<li>Origin: Selected orchards ensuring natural freshness</li>
+<li>Quality Grade: Premium / A-Grade export quality</li>
+<li>Varieties & Sizes: Multiple export sizes</li>
+<li>Packaging: Cartons & ventilated boxes</li>
+<li>Season: Year-round</li>
+<li>Shelf Life: 30–60 days cold storage</li>
+<li>Standards: International food safety norms</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- MANGO -->
+
+<div class="col-md-6 col-lg-4">
+<div class="product-card">
+<div class="product-img">
+<img src="img/mango.png">
+</div>
+<div class="product-content">
+<h5>Premium Mangoes</h5>
+<ul>
+<li>Origin: Certified farms</li>
+<li>Quality: Premium export grade</li>
+<li>Varieties: Alphonso, Kesar</li>
+<li>Packaging: Hygienic cartons</li>
+<li>Season: Summer</li>
+<li>Shelf Life: 14–21 days</li>
+<li>Standards: Global GAP</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- BANANAS -->
+
+<div class="col-md-6 col-lg-4">
+<div class="product-card">
+<div class="product-img">
+<img src="img/bananas.png">
+</div>
+<div class="product-content">
+<h5>Bananas</h5>
+<ul>
+<li>Export quality bananas</li>
+<li>Uniform size</li>
+<li>Carton packaging</li>
+<li>Year-round supply</li>
+<li>Shelf life 20–30 days</li>
+<li>Cold chain maintained</li>
+<li>Export compliant</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="cta">
+<div class="container">
+
+<h2>Interested in Bulk Orders?</h2>
+
+<p class="mt-3">
+Contact Zahi’s International Fruit Export Services for export pricing,
+product catalogs and partnerships.
+</p>
+
+<a href="contactus/contactindex.html" class="btn">
+Contact Us for Bulk Orders
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+</footer>
+
+
+<script>
+
+const menuBtn=document.getElementById("menu-btn");
+const nav=document.getElementById("nav");
+
+menuBtn.onclick=()=>{
+nav.classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>

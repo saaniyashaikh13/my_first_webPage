@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality and Certificates </title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --light-green: #90EE90;
+            --dark-green: #006400;
+            --accent-green: #32CD32;
+            --text-color: #333;
+            --bg-gradient: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+            --card-bg: #fff;
+            --shadow: 0 8px 16px rgba(0,0,0,0.1);
+            --border-radius: 15px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        button{
+  cursor:pointer;
+  border:none;
+  outline:none;
+}
+
+/* Header 
+header{
+  position:sticky;
+  top:0;
+  background-color:#f0fdf4;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+  z-index:1000;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.logo-name{
+  font-weight:bold;
+  color:#065f46;
+  font-size:1rem;
+}
+
+/* Navigation 
+nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  position:relative;
+  padding:5px 0;
+  color:#065f46;
+  font-weight:500;
+  transition:all 0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  color:#10b981;
+}
+
+nav a::after{
+  content:'';
+  display:block;
+  height:2px;
+  background:#10b981;
+  width:0;
+  transition:width 0.3s;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+nav a:hover::after,
+nav a.active::after{
+  width:100%;
+}
+
+/* Hamburger */
+.menu-btn{
+  display:none;
+  font-size:1.5rem;
+  cursor:pointer;
+  color:#065f46;
+}
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated leaf background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 25% 25%, rgba(46, 139, 87, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 75% 75%, rgba(50, 205, 50, 0.1) 0%, transparent 50%);
+            animation: drift 25s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(360deg); }
+        }
+
+       /*header{
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q60 30 50 50 Q40 70 50 90" stroke="rgba(255,255,255,0.2)" fill="none" stroke-width="2"/></svg>') repeat;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.2em;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        header p {
+            margin: 20px 0 0;
+            font-size: 1.4em;
+            opacity: 0.9;
+            animation: fadeInUp 2.5s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+*/
+        .container {
+            max-width: 1300px;
+            margin: 50px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            animation: slideInUp 1.2s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            color: var(--primary-green);
+            border-bottom: 5px solid var(--accent-green);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '🌿';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            font-size: 1.5em;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .quality-process {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, var(--light-green) 0%, #f0f8f0 100%);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            width: 300px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(46, 139, 87, 0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+
+        .process-step:hover::before {
+            transform: scale(1);
+        }
+
+        .process-step:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .process-step h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate {
+            text-align: center;
+            border: 3px solid var(--primary-green);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            background: var(--card-bg);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(46, 139, 87, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.8s, height 0.8s;
+            z-index: -1;
+        }
+
+        .certificate:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .certificate:hover {
+            transform: scale(1.1) rotateX(10deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border-color: var(--accent-green);
+        }
+
+        .certificate img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        .certificate:hover img {
+            transform: rotateY(180deg);
+        }
+
+        .certificate h3 {
+            margin: 20px 0 10px;
+            color: var(--primary-green);
+        }
+
+        .certificate p {
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+
+        .safety-standards {
+            background: linear-gradient(135deg, #e8f5e8 0%, var(--light-green) 100%);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .safety-standards ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .safety-standards li {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .safety-standards li:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.85);
+            animation: modalFadeIn 0.5s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            margin: 8% auto;
+            padding: 40px;
+            border: none;
+            width: 90%;
+            max-width: 800px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            animation: bounceInModal 0.6s ease;
+        }
+
+        @keyframes bounceInModal {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .close {
+            color: var(--primary-green);
+            float: right;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--dark-green);
+        }
+
+        #modal-img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            color: white;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="3" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: twinkle 20s linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            .quality-process {
+                flex-direction: column;
+                align-items: center;
+            }
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            .safety-standards ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+footer{
+  background:#f0fdf4;
+  padding:20px;
+  text-align:center;
+}
+
+.footer-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-logo-img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-logo-name{
+  font-weight:bold;
+  color:#065f46;
+}
+
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.footer-nav a{
+  color:#065f46;
+  transition:0.3s;
+}
+
+.footer-nav a:hover{
+  color:#10b981;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.social-icons a{
+  font-size:1.2rem;
+  color:#065f46;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#10b981;
+}
+
+.contact-info{
+  font-size:0.85rem;
+  color:#065f46;
+  margin-bottom:5px;
+}
+
+.copyright{
+  font-size:0.75rem;
+  color:#065f46;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#f0fdf4;
+    padding:10px 0;
+    position:absolute;
+    top:60px;
+    left:0;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    padding:10px 15px;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .overlay h1{
+    font-size:1.5rem;
+  }
+
+  .overlay p{
+    font-size:0.9rem;
+  }
+
+  .overlay button{
+    padding:7px 15px;
+    font-size:0.9rem;
+  }
+}
+
+@media (max-width:480px){
+  .logo-name{
+    font-size:0.9rem;
+  }
+
+  .overlay h1{
+    font-size:1.2rem;
+  }
+
+  .overlay p{
+    font-size:0.8rem;
+  }
+
+  .overlay button{
+    padding:6px 12px;
+    font-size:0.8rem;
+  }
+
+  .hero{
+    height:60vh;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Zahi's Logo" class="logo-img">
+    <div class="logo-name">Zahi’s International Services</div>
+  </div>
+  <i class="fas fa-bars menu-btn" id="menu-btn"></i>
+  <nav id="nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html" class="active">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </nav>
+</header>
+
+    <div class="container">
+        <section class="section quality-section">
+            <h2>Quality Control Process</h2>
+            <p>Our rigorous quality control process ensures that every fruit meets the highest standards from farm to export. We focus on freshness, safety, and sustainability to deliver premium products.</p>
+            <div class="quality-process">
+                <div class="process-step">
+                    <h3>Harvesting</h3>
+                    <p>Fruits are hand-picked at optimal ripeness by trained farmers.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Sorting & Grading</h3>
+                    <p>Automated and manual sorting to remove defects and grade by size and quality.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Testing</h3>
+                    <p>Laboratory tests for pesticides, ripeness, and nutritional value.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Packaging</h3>
+                    <p>Hygienic packaging with temperature-controlled storage.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Export</h3>
+                    <p>Final inspection before shipment to guarantee global standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section certificates-section">
+            <h2>Certifications</h2>
+            <p>We hold key certifications that validate our commitment to quality and compliance. Click on a certificate for more details.</p>
+            <div class="certificates-grid">
+                <div class="certificate" data-cert="apeda">
+                    <a href="pdfs\ZAHIS_APEDA.pdf" target="_blank">
+                        <button>APEDA certificate</button>
+                    </a>
+                    <h3>APEDA</h3>
+                    <p>Agricultural and Processed Food Products Export Development Authority</p>
+                </div>
+                <div class="certificate" data-cert="fssai">
+                    <a href="pdfs\FSSA_LICENCE.pdf" target="_blank">
+                        <button>FASSAI certificate</button>
+                    </a>
+                    <h3>FSSAI</h3>
+                    <p>Food Safety and Standards Authority of India</p>
+                </div>
+                <div class="certificate" data-cert="iec">
+                    <a href="pdfs\certificate_Of_IEC.pdf" target="_blank">
+                        <button>ICE certificate</button>
+                    </a>
+                    <h3>IEC</h3>
+                    <p>Importer Exporter Code</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section safety-section">
+            <h2>Hygiene and Safety Standards</h2>
+            <div class="safety-standards">
+                <p>Our operations adhere to stringent hygiene and safety standards to ensure product integrity and consumer health.</p>
+                <ul>
+                    <li><strong>Clean Facilities:</strong> Regular sanitization and pest control.</li>
+                    <li><strong>Employee Training:</strong> Hygiene protocols and safety gear for all staff.</li>
+                    <li><strong>Traceability:</strong> Full tracking from source to destination.</li>
+                    <li><strong>Compliance:</strong> Adherence to international food safety regulations.</li>
+                    <li><strong>Sustainable Practices:</strong> Eco-friendly methods to minimize environmental impact.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for certificate details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Certificate">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+  // Sticky Header
+  const header = document.querySelector(".main-header");
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("sticky", window.scrollY > 50);
+    });
+  }
+
+  // Hero Animation (only if hero exists)
+  const hero = document.querySelector(".hero-section");
+  if (hero) {
+    hero.classList.add("fade-in");
+  }
+
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificates = document.querySelectorAll('.certificate');
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const modalText = document.getElementById('modal-text');
+            const closeBtn = document.querySelector('.close');
+
+            // Certificate details
+            const certDetails = {
+                apeda: {
+                    title: "APEDA Certification",
+                    text: "APEDA (Agricultural and Processed Food Products Export Development Authority) certification ensures that our products meet export quality standards for agricultural and processed foods. It promotes sustainable agricultural practices and facilitates international trade."
+                },
+                fssai: {
+                    title: "FSSAI Certification",
+                    text: "FSSAI (Food Safety and Standards Authority of India) license guarantees that our fruits comply with India's food safety regulations, covering hygiene, labeling, and contamination prevention to ensure consumer safety."
+                },
+                iec: {
+                    title: "IEC Code",
+                    text: "IEC (Importer Exporter Code) is a mandatory registration for exporters in India, issued by the Directorate General of Foreign Trade. It verifies our legitimacy as an international trader and enables smooth customs clearance."
+                }
+            };
+
+            certificates.forEach(cert => {
+                cert.addEventListener('click', function() {
+                    const certKey = this.getAttribute('data-cert');
+                    const imgSrc = this.querySelector('img').src;
+                    const details = certDetails[certKey];
+
+                    modalImg.src = imgSrc;
+                    modalTitle.textContent = details.title;
+                    modalText.textContent = details.text;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <!-- Footer -->
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Zahi's Logo" class="footer-logo-img">
+    <div class="footer-logo-name">Zahi’s International Services</div>
+  </div>
+
+  <div class="footer-nav">
+    <a href="main.html">Home</a>
+    <a href="aboutUs.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="product.html">Products</a>
+    <a href="certificate.html">Certifications</a>
+    <a href="contactus/contactindex.html">Contact Us</a>
+    <a href="faq.html">FAQ's</a>
+    <a href="feedfack.html">Feedback</a>
+  </div>
+
+  <!-- <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div> -->
+
+  <div class="contact-info">
+    Email: info@zahisinternational.com | Phone: +91 40-66777600 |<br> Address: Office No.1 CS No.6095/66/2 Global City,View Siddeshwar Peth, Solapur 413001. Maharashra India.
+  </div>
+
+  <div class="copyright">
+    &copy; 2026 Zahi’s International Fruit Export Services. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>
